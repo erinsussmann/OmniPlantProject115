@@ -120,7 +120,7 @@ public class FlowerPage implements ActionListener
             //this is where i should add this item to my cart
             System.out.println(FirstPage.cart.toString());
             frame.setVisible(false);
-            //display the order so far
+            Cart c = new Cart();
         }
         
         if(e.getActionCommand().equals("button3Clicked")){

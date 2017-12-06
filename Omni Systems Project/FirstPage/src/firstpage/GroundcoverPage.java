@@ -118,7 +118,7 @@ public class GroundcoverPage implements ActionListener
             System.out.println("clicked show-me-my-cart button");
             System.out.println(FirstPage.cart.toString());
             //close GroundcoverPage
-            //display the order so far
+            Cart c = new Cart();
         }
         
         if(e.getActionCommand().equals("button3Clicked")){
