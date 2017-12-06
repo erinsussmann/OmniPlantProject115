@@ -10,13 +10,16 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
         
 public class FirstPage implements ActionListener{
     
     //this is the gloabal cart (public)
     //then its accesable to any class
-    public static ArrayList<String> cart = new ArrayList<>();
+    public static ArrayList<Integer> cart = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0));
+    public static ArrayList<String> plant = new ArrayList<>(Arrays.asList("Zinnia", "Daisy", "Cosmos", "Acorus", "Devian", "Sage", "Pepper", "Eggplant", "Tomato"));
+    
     
     public FirstPage()
     {

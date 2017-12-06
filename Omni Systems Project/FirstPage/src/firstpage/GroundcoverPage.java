@@ -110,7 +110,7 @@ public class GroundcoverPage implements ActionListener
     {
         if(e.getActionCommand().equals("button1Clicked")){
             System.out.println("add 1 square foot acorus to cart");
-            FirstPage.cart.add("Acorus");
+            FirstPage.cart.set(3, (FirstPage.cart.get(3)+1));
             //add to order
         }
         
@@ -123,7 +123,7 @@ public class GroundcoverPage implements ActionListener
         
         if(e.getActionCommand().equals("button3Clicked")){
             System.out.println("add 1 square foot devian to cart");
-            FirstPage.cart.add("Devian");
+            FirstPage.cart.set(4, (FirstPage.cart.get(4)+1));
             //add to order
         }
         
@@ -135,7 +135,7 @@ public class GroundcoverPage implements ActionListener
       
         if(e.getActionCommand().equals("button5Clicked")){
             System.out.println("add 1 square foot sage to cart");
-            FirstPage.cart.add("Sage");
+            FirstPage.cart.set(5, (FirstPage.cart.get(5)+1));
             //add to order
         }
         

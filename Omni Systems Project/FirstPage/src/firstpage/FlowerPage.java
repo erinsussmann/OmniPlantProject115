@@ -111,7 +111,7 @@ public class FlowerPage implements ActionListener
         if(e.getActionCommand().equals("button1Clicked")){
             System.out.println("add 1 square foot zinnia to cart");
             // TODO: this is where i should add this item to my cart
-            FirstPage.cart.add("Zinnia");
+            FirstPage.cart.set(0, (FirstPage.cart.get(0)+1));
             //add to order
         }
         
@@ -125,7 +125,7 @@ public class FlowerPage implements ActionListener
         
         if(e.getActionCommand().equals("button3Clicked")){
             System.out.println("add 1 square foot daisy to cart");
-            FirstPage.cart.add("Daisy");
+            FirstPage.cart.set(1, (FirstPage.cart.get(1)+1));
             //this is where i should add this item to my cart;
             //add to order
         }
@@ -138,7 +138,7 @@ public class FlowerPage implements ActionListener
       
         if(e.getActionCommand().equals("button5Clicked")){
             System.out.println("add 1 square foot cosmos to cart");
-            FirstPage.cart.add("Cosmos");
+            FirstPage.cart.set(2, (FirstPage.cart.get(2)+1));
             //add to order
         }
         

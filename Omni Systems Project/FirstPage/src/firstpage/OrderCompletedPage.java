@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class OrderCompletedPage implements ActionListener{
+public class OrderCompletedPage{
      private JFrame frame;
     private JPanel primary;
     private JPanel topPanel;
@@ -49,24 +49,6 @@ public class OrderCompletedPage implements ActionListener{
         frame.setVisible(true);
     } 
 
-    @Override
-    public void actionPerformed(ActionEvent e) 
-    {
-        if(e.getActionCommand().equals("button1Clicked")){
-            System.out.println("add 1 square foot zinnia to cart");
-            // TODO: this is where i should add this item to my cart
-            FirstPage.cart.add("Zinnia");
-            //add to order
-        }
-        
-        if(e.getActionCommand().equals("button2Clicked")){
-            System.out.println("clicked final checkout button");
-            //this is where i should add this item to my cart
-            System.out.println(FirstPage.cart.toString());
-            frame.setVisible(false);
-            //display the order so far
-        }
         
     }
-}
-    
+
