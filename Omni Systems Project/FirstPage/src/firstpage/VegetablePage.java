@@ -110,17 +110,20 @@ public class VegetablePage implements ActionListener
     {
         if(e.getActionCommand().equals("button1Clicked")){
             System.out.println("add 1 square foot pepper to cart");
+            FirstPage.cart.add("Pepper");
             //add to order
         }
         
         if(e.getActionCommand().equals("button2Clicked")){
             System.out.println("clicked show-me-my-cart button");
+            System.out.println(FirstPage.cart.toString());
             //close FlowerPage
             //display the order so far
         }
         
         if(e.getActionCommand().equals("button3Clicked")){
             System.out.println("add 1 square foot eggplant to cart");
+            FirstPage.cart.add("Eggplants");
             //add to order
         }
         
@@ -132,6 +135,7 @@ public class VegetablePage implements ActionListener
       
         if(e.getActionCommand().equals("button5Clicked")){
             System.out.println("add 1 square foot tomato to cart");
+            FirstPage.cart.add("Tomato");
             //add to order
         }
         
