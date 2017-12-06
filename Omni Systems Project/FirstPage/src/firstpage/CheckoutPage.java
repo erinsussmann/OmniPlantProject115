@@ -42,7 +42,7 @@ public class CheckoutPage implements ActionListener{
         sub1.setPreferredSize(new Dimension(500,325));
         
         for(int i =0; i < FirstPage.cart.size(); i++){
-            sub1.add(new JLabel(FirstPage.cart.get(i)));
+            sub1.add(new JLabel(FirstPage.cart.get(i) + "\n"));
         }
        // JLabel label = FirstPage.cart.toString();
         button1 = new JButton("Checkout");
@@ -51,10 +51,10 @@ public class CheckoutPage implements ActionListener{
         button1.addActionListener(this);
         button1.setActionCommand("button1Clicked");
         sub1.add(button1); 
-        button1 = new JButton("zinnia");
+        button1 = new JButton("checkout");
 
         
-        //primary JPanel holds 4 JPanel: topPanel, sub1, sub2, sub3
+        //primary JPanel holds 4 JPanel: topPanel, sub1
         primary = new JPanel();
         primary.setBackground(new Color(120,157,255));
         primary.setPreferredSize(new Dimension (500,300));
@@ -72,44 +72,10 @@ public class CheckoutPage implements ActionListener{
     public void actionPerformed(ActionEvent e) 
     {
         if(e.getActionCommand().equals("button1Clicked")){
-            System.out.println("add 1 square foot zinnia to cart");
-            // TODO: this is where i should add this item to my cart
-            FirstPage.cart.add("Zinnia");
-            //add to order
+            System.out.println("Order Completed");
+            OrderCompletedPage O = new OrderCompletedPage();
         }
         
-        if(e.getActionCommand().equals("button2Clicked")){
-            System.out.println("clicked show-me-my-cart button");
-            //this is where i should add this item to my cart
-            System.out.println(FirstPage.cart.toString());
-            frame.setVisible(false);
-            //display the order so far
-        }
-        
-        if(e.getActionCommand().equals("button3Clicked")){
-            System.out.println("add 1 square foot daisy to cart");
-            FirstPage.cart.add("Daisy");
-            //this is where i should add this item to my cart;
-            //add to order
-        }
-        
-        if(e.getActionCommand().equals("button4Clicked")){
-            System.out.println("clicked return to main menu button");
-            frame.setVisible(false);
-            FirstPage F = new FirstPage();
-        }   
-      
-        if(e.getActionCommand().equals("button5Clicked")){
-            System.out.println("add 1 square foot cosmos to cart");
-            FirstPage.cart.add("Cosmos");
-            //add to order
-        }
-        
-        if(e.getActionCommand().equals("button6Clicked")){
-            System.out.println("clicked I'm-ready-to-check-out button; order page will load");
-            frame.setVisible(false);
-            //final order prints to screen
-        }
     }
 }
 

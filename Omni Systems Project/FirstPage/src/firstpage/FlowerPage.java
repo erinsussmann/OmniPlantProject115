@@ -110,17 +110,23 @@ public class FlowerPage implements ActionListener
     {
         if(e.getActionCommand().equals("button1Clicked")){
             System.out.println("add 1 square foot zinnia to cart");
+            // TODO: this is where i should add this item to my cart
+            FirstPage.cart.add("Zinnia");
             //add to order
         }
         
         if(e.getActionCommand().equals("button2Clicked")){
             System.out.println("clicked show-me-my-cart button");
+            //this is where i should add this item to my cart
+            System.out.println(FirstPage.cart.toString());
             frame.setVisible(false);
             //display the order so far
         }
         
         if(e.getActionCommand().equals("button3Clicked")){
             System.out.println("add 1 square foot daisy to cart");
+            FirstPage.cart.add("Daisy");
+            //this is where i should add this item to my cart;
             //add to order
         }
         
@@ -132,6 +138,7 @@ public class FlowerPage implements ActionListener
       
         if(e.getActionCommand().equals("button5Clicked")){
             System.out.println("add 1 square foot cosmos to cart");
+            FirstPage.cart.add("Cosmos");
             //add to order
         }
         
@@ -139,6 +146,7 @@ public class FlowerPage implements ActionListener
             System.out.println("clicked I'm-ready-to-check-out button; order page will load");
             frame.setVisible(false);
             //final order prints to screen
+            CheckoutPage C = new CheckoutPage();
         }
     }
 }

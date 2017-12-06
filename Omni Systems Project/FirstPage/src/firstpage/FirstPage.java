@@ -9,9 +9,14 @@ package firstpage;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
         
 public class FirstPage implements ActionListener{
+    
+    //this is the gloabal cart (public)
+    //then its accesable to any class
+    public static ArrayList<String> cart = new ArrayList<>();
     
     public FirstPage()
     {
@@ -126,6 +131,7 @@ public class FirstPage implements ActionListener{
             System.out.println("clicked I'm-ready-to-check-out button; order page will load");
             //close FirstPage
             //print final order to screen
+            CheckoutPage C = new CheckoutPage();
             }
     }
 }
