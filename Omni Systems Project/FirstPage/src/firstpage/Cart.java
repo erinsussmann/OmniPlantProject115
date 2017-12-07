@@ -65,10 +65,6 @@ public class Cart implements ActionListener
         cartStuff.setFont(new Font("Arial", Font.PLAIN, 12));
         sub1.add(cartStuff);
         
-//        for(int i =0; i < FirstPage.cart.size(); i++){            original
-//            sub1.add(new JLabel(FirstPage.cart.get(i) + " "));    original
-//        }
-        
         for(int i =0; i < FirstPage.cart.size(); i++)
         {
             if (FirstPage.cart.get(i)!=0)
@@ -107,7 +103,6 @@ public class Cart implements ActionListener
         frame.setVisible(true);
     }
     
-
    
     public void actionPerformed(ActionEvent e) 
     {

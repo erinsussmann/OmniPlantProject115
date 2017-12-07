@@ -39,16 +39,11 @@ public class OrderCompletedPage{
         primary = new JPanel();
         primary.setBackground(new Color(120,157,255));
         primary.setPreferredSize(new Dimension (500,300));
-        
         primary.add(topPanel);
-        
-        
     
         frame.getContentPane().add(primary);
         frame.pack();
         frame.setVisible(true);
     } 
-
-        
-    }
-
+}
+   

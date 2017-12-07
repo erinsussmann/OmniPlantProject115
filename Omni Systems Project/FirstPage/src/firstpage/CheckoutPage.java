@@ -5,6 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 
 public class CheckoutPage implements ActionListener{
     private JFrame frame;
@@ -28,10 +29,9 @@ public class CheckoutPage implements ActionListener{
         double plantPrice = 0.0;
         double subTotal = 0.0;
         String plantName = "";
+        double grandTotal = 0.0;
         
         ArrayList<String> order = new ArrayList<>();
-//        for(int i = 0; i< FirstPage.cart.size(); i++){
-           // String work = String.valueOf(FirstPage.cart.get(i)) + "       " + FirstPage.plant.get(i);  original
           for(int i = 0 ; i < FirstPage.cart.size() -1 ; i+=1)
           {
              
@@ -39,8 +39,11 @@ public class CheckoutPage implements ActionListener{
               System.out.println(plantName = FirstPage.plant.get(i*2));
               System.out.println(plantPrice = Double.parseDouble(FirstPage.plant.get((i*2)+1)));
               System.out.println(subTotal = quantity * plantPrice);
-              String work = quantity+ "       " + plantName + "       " + plantPrice + "     " + subTotal;
+              String work = quantity+ "               " + plantName 
+                      + "               " + plantPrice + "               " 
+                      + subTotal;
               System.out.println(work);
+              grandTotal += subTotal;
               order.add(work);
           }
                  
@@ -65,8 +68,13 @@ public class CheckoutPage implements ActionListener{
         sub1.setLayout(new BoxLayout(sub1, BoxLayout.PAGE_AXIS));
         for(int i =0; i < FirstPage.cart.size()-1; i++){
             sub1.add(new JLabel (order.get(i)));
+            sub1.add(Box.createVerticalStrut(20));//creates space between the lines
+            sub1.add(Box.createHorizontalStrut(15));
         }
        // JLabel label = FirstPage.cart.toString();
+        DecimalFormat fmt = new DecimalFormat("$0.00");
+        JLabel totalLable = new JLabel("Grand Total is " + fmt.format(grandTotal));
+        sub1.add(totalLable);
         button1 = new JButton("Checkout");
         button1.setFont(new Font("Arial", Font.PLAIN,18));
         button1.setPreferredSize(new Dimension(240,100));

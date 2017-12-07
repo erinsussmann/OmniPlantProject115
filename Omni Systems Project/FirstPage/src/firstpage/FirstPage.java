@@ -19,10 +19,7 @@ public class FirstPage implements ActionListener{
     //then its accesable to any class
 
     public static ArrayList<Integer> cart = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0));
-    //public static ArrayList<String> plant = new ArrayList<>(Arrays.asList("Zinnia", "Daisy", "Cosmos", "Acorus", "Devian", "Sage", "Pepper", "Eggplant", "Tomato"));
-   
-    public static ArrayList<String> plant = new ArrayList<>(Arrays.asList("Zinnia", "10.00","Daisy","12.00","Cosmos","13.00","Acorus","8.00","Devian","6.00","Sage","5.00","Pepper", "4.00","Eggplant","9.00","Tomato","2.00"));
-    
+    public static ArrayList<String> plant = new ArrayList<>(Arrays.asList("Zinnia", "7.80","Daisy","8.50","Cosmos","12.00","Acorus","8.00","Devian","6.00","Sage","5.00","Pepper", "14.00","Eggplant","19.00","Tomato","12.50"));
     
     public FirstPage()
     {
@@ -44,7 +41,7 @@ public class FirstPage implements ActionListener{
         sub1.setBackground(new Color(255,238,170));//gold
         sub1.setPreferredSize(new Dimension(240,325));
         JButton button1 = new JButton("show me the Flowers");
-        button1.setFont(new Font("Arial", Font.PLAIN,18));
+        button1.setFont(new Font("Arial Narrow", Font.PLAIN,20));
         button1.setPreferredSize(new Dimension(240,100));
         button1.addActionListener(this);
         button1.setActionCommand("button1Clicked");
@@ -60,23 +57,18 @@ public class FirstPage implements ActionListener{
         sub2.setBackground(new Color(255,238,170));//gold
         sub2.setPreferredSize(new Dimension(240,325));
         JButton button3 = new JButton("show me the Vegetables");
-        button3.setFont(new Font("Arial", Font.PLAIN,18));
+        button3.setFont(new Font("Arial Narrow", Font.PLAIN,20));
         button3.setPreferredSize(new Dimension(240,100));
         button3.addActionListener(this);
         button3.setActionCommand("button3Clicked");
         sub2.add(button3);
         sub2.add(new JLabel(new ImageIcon("eggplant.png")));
-        JButton button4 = new JButton("need this button?");
-        button4.setPreferredSize(new Dimension(240,50));
-        button4.addActionListener(this);
-        button4.setActionCommand("button4Clicked");
-        sub2.add(button4);
         
         JPanel sub3 = new JPanel();
         sub3.setBackground(new Color(255,238,170));//gold
         sub3.setPreferredSize(new Dimension(240,325));
         JButton button5 = new JButton("show me the Groundcovers");
-        button5.setFont(new Font("Arial", Font.PLAIN,18));
+        button5.setFont(new Font("Arial Narrow", Font.PLAIN,20));
         button5.setPreferredSize(new Dimension(240,100));
         button5.addActionListener(this);
         button5.setActionCommand("button5Clicked");
@@ -122,11 +114,6 @@ public class FirstPage implements ActionListener{
             System.out.println("clicked vegetable button; vegetable page will load");
             //close FirstPage
             VegetablePage V = new VegetablePage();}
-        
-        if(e.getActionCommand().equals("button4Clicked")){
-            System.out.println("clicked need-this-button? button");
-            //close FirstPage
-            }
           
         if(e.getActionCommand().equals("button5Clicked")){
             System.out.println("clicked groundcover button; groundcover page will load");
