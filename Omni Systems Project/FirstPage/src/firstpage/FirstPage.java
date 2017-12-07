@@ -3,7 +3,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+ **/
 package firstpage;
 
 import java.awt.*;
@@ -17,8 +17,11 @@ public class FirstPage implements ActionListener{
     
     //this is the gloabal cart (public)
     //then its accesable to any class
+
     public static ArrayList<Integer> cart = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0));
-    public static ArrayList<String> plant = new ArrayList<>(Arrays.asList("Zinnia", "Daisy", "Cosmos", "Acorus", "Devian", "Sage", "Pepper", "Eggplant", "Tomato"));
+    //public static ArrayList<String> plant = new ArrayList<>(Arrays.asList("Zinnia", "Daisy", "Cosmos", "Acorus", "Devian", "Sage", "Pepper", "Eggplant", "Tomato"));
+   
+    public static ArrayList<String> plant = new ArrayList<>(Arrays.asList("Zinnia", "10.00","Daisy","12.00","Cosmos","13.00","Acorus","8.00","Devian","6.00","Sage","5.00","Pepper", "4.00","Eggplant","9.00","Tomato","2.00"));
     
     
     public FirstPage()

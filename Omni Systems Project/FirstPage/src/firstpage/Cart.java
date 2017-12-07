@@ -20,7 +20,8 @@ import javax.swing.*;
  *
  * @author aboeni
  */
-public class Cart implements ActionListener{
+public class Cart implements ActionListener
+{
     private JFrame frame;
     private JPanel primary;
     private JPanel topPanel;
@@ -32,7 +33,8 @@ public class Cart implements ActionListener{
     private JButton button1;
     private JButton button2;
     
-    public Cart(){
+    public Cart()
+    {
         /**
          * Show what you order
          * how much you have
@@ -63,8 +65,14 @@ public class Cart implements ActionListener{
         cartStuff.setFont(new Font("Arial", Font.PLAIN, 12));
         sub1.add(cartStuff);
         
-        for(int i =0; i < FirstPage.cart.size(); i++){
-            sub1.add(new JLabel(FirstPage.cart.get(i) + " "));
+//        for(int i =0; i < FirstPage.cart.size(); i++){            original
+//            sub1.add(new JLabel(FirstPage.cart.get(i) + " "));    original
+//        }
+        
+        for(int i =0; i < FirstPage.cart.size(); i++)
+        {
+            if (FirstPage.cart.get(i)!=0)
+                sub1.add(new JLabel(FirstPage.cart.get(i)+"   "));
         }
         
         button1 = new JButton("I'm ready to check out");
@@ -99,7 +107,8 @@ public class Cart implements ActionListener{
         frame.setVisible(true);
     }
     
-    @Override
+
+   
     public void actionPerformed(ActionEvent e) 
     {
         if(e.getActionCommand().equals("button1Clicked")){
@@ -118,8 +127,6 @@ public class Cart implements ActionListener{
             FirstPage.cart.clear();
             frame.setVisible(false);
             frame.dispose();
-            
-            
         }
     }
 }

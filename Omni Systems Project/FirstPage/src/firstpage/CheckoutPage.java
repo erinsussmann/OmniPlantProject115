@@ -24,12 +24,26 @@ public class CheckoutPage implements ActionListener{
     
     public CheckoutPage()         
     {
-        ArrayList<String> order = new ArrayList<>();
-        for(int i = 0; i< FirstPage.cart.size(); i++){
-            String work = String.valueOf(FirstPage.cart.get(i)) + "       " + FirstPage.plant.get(i);
-            order.add(work);
-        }
+        Integer quantity = 0;
+        double plantPrice = 0.0;
+        double subTotal = 0.0;
+        String plantName = "";
         
+        ArrayList<String> order = new ArrayList<>();
+//        for(int i = 0; i< FirstPage.cart.size(); i++){
+           // String work = String.valueOf(FirstPage.cart.get(i)) + "       " + FirstPage.plant.get(i);  original
+          for(int i = 0 ; i < FirstPage.cart.size() -1 ; i+=1)
+          {
+             
+              System.out.println(quantity = FirstPage.cart.get(i));
+              System.out.println(plantName = FirstPage.plant.get(i*2));
+              System.out.println(plantPrice = Double.parseDouble(FirstPage.plant.get((i*2)+1)));
+              System.out.println(subTotal = quantity * plantPrice);
+              String work = quantity+ "       " + plantName + "       " + plantPrice + "     " + subTotal;
+              System.out.println(work);
+              order.add(work);
+          }
+                 
         frame = new JFrame("Checkout");
         frame.setPreferredSize(new Dimension(750,450));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,7 +63,7 @@ public class CheckoutPage implements ActionListener{
         sub1.setBackground(new Color(255,238,170));//gold
         sub1.setPreferredSize(new Dimension(500,325));
         sub1.setLayout(new BoxLayout(sub1, BoxLayout.PAGE_AXIS));
-        for(int i =0; i < FirstPage.cart.size(); i++){
+        for(int i =0; i < FirstPage.cart.size()-1; i++){
             sub1.add(new JLabel (order.get(i)));
         }
        // JLabel label = FirstPage.cart.toString();
