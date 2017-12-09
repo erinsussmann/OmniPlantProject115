@@ -1,4 +1,5 @@
-//comment
+//authors: Erin Sussmann, Amanda Boeni, Julia Giolitto
+
 package firstpage;
 
 import java.awt.*;
@@ -35,14 +36,16 @@ public class CheckoutPage implements ActionListener{
           for(int i = 0 ; i < FirstPage.cart.size() -1 ; i+=1)
           {
              
-              System.out.println(quantity = FirstPage.cart.get(i));
-              System.out.println(plantName = FirstPage.plant.get(i*2));
-              System.out.println(plantPrice = Double.parseDouble(FirstPage.plant.get((i*2)+1)));
-              System.out.println(subTotal = quantity * plantPrice);
-              String work = quantity+ "               " + plantName 
-                      + "               " + plantPrice + "               " 
-                      + subTotal;
+            System.out.println(quantity = FirstPage.cart.get(i));
+            System.out.println(plantName = FirstPage.plant.get(i*2));
+            System.out.println(plantPrice = Double.parseDouble(FirstPage.plant.get((i*2)+1)));
+            System.out.println(subTotal = quantity * plantPrice);
+              String work = quantity+ "\t\t\t\t" + plantName 
+                      + "\t\t\t\t" + plantPrice + "\t\t\t\t"+ subTotal;
               System.out.println(work);
+              
+              //grandTotal is here!
+              
               grandTotal += subTotal;
               order.add(work);
           }

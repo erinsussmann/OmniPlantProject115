@@ -1,3 +1,4 @@
+//authors: Erin Sussmann, Amanda Boeni, Julia Giolitto
 
 package firstpage;
 

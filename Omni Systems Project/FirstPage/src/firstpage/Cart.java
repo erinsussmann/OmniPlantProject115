@@ -1,8 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//authors: Erin Sussmann, Amanda Boeni, Julia Giolitto
+
 package firstpage;
 
 import java.awt.Color;
@@ -16,10 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.*;
-/**
- *
- * @author aboeni
- */
+
 public class Cart implements ActionListener
 {
     private JFrame frame;
@@ -65,11 +59,14 @@ public class Cart implements ActionListener
         cartStuff.setFont(new Font("Arial", Font.PLAIN, 12));
         sub1.add(cartStuff);
         
+        //???? use code already (working) in CheckoutPage
+        
         for(int i =0; i < FirstPage.cart.size(); i++)
         {
             if (FirstPage.cart.get(i)!=0)
                 sub1.add(new JLabel(FirstPage.cart.get(i)+"   "));
         }
+        
         
         button1 = new JButton("I'm ready to check out");
         button1.setFont(new Font("Arial", Font.PLAIN,18));
