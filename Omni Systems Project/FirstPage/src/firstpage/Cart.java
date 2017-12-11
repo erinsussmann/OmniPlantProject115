@@ -55,15 +55,21 @@ public class Cart implements ActionListener
         sub2.setBackground(new Color(255,238,170));//gold
         sub2.setPreferredSize(new Dimension(240,325));
         
-        
-        cartStuff = new JLabel("•This is your Cart: \n \n");
-        cartStuff.setFont(new Font("Arial", Font.PLAIN, 12));
+        cartStuff = new JLabel("<html><center>This is your Cart:<br></center></hmtl>");
+        cartStuff.setFont(new Font("Arial", Font.PLAIN, 20));
         sub1.add(cartStuff);
+        
         
         for(int i =0; i < FirstPage.cart.size(); i++)
         {
-            if (FirstPage.cart.get(i)!=0)
-                sub1.add(new JLabel("\n"+FirstPage.cart.get(i)+"   "+FirstPage.plant.get(i*2)+"   $"+Double.parseDouble(FirstPage.plant.get((i*2)+1))));
+            int quan = FirstPage.cart.get(i);
+            double price = Double.parseDouble(FirstPage.plant.get((i*2)+1));
+            double cost = price * quan;
+            if (FirstPage.cart.get(i)!=0){
+                sub1.add(new JLabel(FirstPage.cart.get(i)+"   "
+                        +FirstPage.plant.get(i*2)+"   $"+
+                        cost+"            "));
+            }
         }
         
         
