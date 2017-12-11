@@ -113,6 +113,7 @@ public class Cart implements ActionListener
     {
         if(e.getActionCommand().equals("button1Clicked")){
             System.out.println("Ready to CheckOut! Order page will load...");
+            frame.setVisible(false);
             CheckoutPage c = new CheckoutPage();
         }
         
