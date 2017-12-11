@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -59,12 +60,10 @@ public class Cart implements ActionListener
         cartStuff.setFont(new Font("Arial", Font.PLAIN, 12));
         sub1.add(cartStuff);
         
-        //???? use code already (working) in CheckoutPage
-        
         for(int i =0; i < FirstPage.cart.size(); i++)
         {
             if (FirstPage.cart.get(i)!=0)
-                sub1.add(new JLabel(FirstPage.cart.get(i)+"   "));
+                sub1.add(new JLabel("\n"+FirstPage.cart.get(i)+"   "+FirstPage.plant.get(i*2)+"   $"+Double.parseDouble(FirstPage.plant.get((i*2)+1))));
         }
         
         
@@ -76,16 +75,18 @@ public class Cart implements ActionListener
         sub2.add(button1); 
         
         button2 = new JButton("Return to Main Menu");
+        button2.setFont(new Font("Arial", Font.PLAIN,18));
         button2.setPreferredSize(new Dimension(240,50));
         button2.addActionListener(this);
         button2.setActionCommand("button2Clicked");
         sub2.add(button2);
         
-        JButton butt3 = new JButton("Start Over");
-        butt3.setPreferredSize(new Dimension(240,50));
-        butt3.addActionListener(this);
-        butt3.setActionCommand("butt3Clicked");
-        sub2.add(butt3);
+        JButton button3 = new JButton("Start Over");
+        button3.setFont(new Font("Arial", Font.PLAIN,18));
+        button3.setPreferredSize(new Dimension(240,50));
+        button3.addActionListener(this);
+        button3.setActionCommand("button3Clicked");
+        sub2.add(button3);
         
         primary = new JPanel();
         primary.setBackground(new Color(120,157,255));
@@ -101,6 +102,7 @@ public class Cart implements ActionListener
     }
     
    
+    @Override
     public void actionPerformed(ActionEvent e) 
     {
         if(e.getActionCommand().equals("button1Clicked")){
@@ -114,11 +116,10 @@ public class Cart implements ActionListener
             FirstPage F = new FirstPage();
         }
         
-        if(e.getActionCommand().equals("butt3Clicked")){
+        if(e.getActionCommand().equals("button3Clicked")){
             System.out.println("Start Over clicked... starting over...");
-            FirstPage.cart.clear();
-            frame.setVisible(false);
-            frame.dispose();
+            frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
         }
     }
 }
+
