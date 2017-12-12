@@ -1,0 +1,1 @@
+Zinnia,7.80,Daisy,8.50,Cosmos,12.00,Acorus,8.00,Devian,6.00,Sage,5.00,Pepper,14.00,Eggplant,19.00,Tomato,12.50

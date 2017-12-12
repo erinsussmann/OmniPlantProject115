@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.io.*;
 
         
 public class FirstPage implements ActionListener{
@@ -15,7 +16,8 @@ public class FirstPage implements ActionListener{
     //then its accesable to any class
 
     public static ArrayList<Integer> cart = new ArrayList<>(Arrays.asList(0, 0, 0, 0, 0, 0, 0, 0, 0));
-    public static ArrayList<String> plant = new ArrayList<>(Arrays.asList("Zinnia", "7.80","Daisy","8.50","Cosmos","12.00","Acorus","8.00","Devian","6.00","Sage","5.00","Pepper", "14.00","Eggplant","19.00","Tomato","12.50"));
+    //public static ArrayList<String> plant = new ArrayList<>(Arrays.asList("Zinnia", "7.80","Daisy","8.50","Cosmos","12.00","Acorus","8.00","Devian","6.00","Sage","5.00","Pepper", "14.00","Eggplant","19.00","Tomato","12.50"));
+    public static ArrayList<String> plant = new ArrayList<>();
     
     public FirstPage()
     {
@@ -91,9 +93,25 @@ public class FirstPage implements ActionListener{
         frame.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        FirstPage firstPage = new FirstPage();}  
-
+    public static void main(String[] args) throws IOException
+    {
+        FirstPage firstPage = new FirstPage();
+        
+        try{
+        File in = new File("plantData.txt");
+        BufferedReader currentIn = new BufferedReader(new FileReader(in));
+        String inLine;
+        java.util.List<String> temp = new ArrayList<>();
+        while((inLine = currentIn.readLine()) !=null)
+            temp = Arrays.asList(inLine.split(","));
+            plant.addAll(temp);}
+        catch(IOException e)
+        {
+            System.out.println("IO Exception!");
+        }
+        
+    }
+        
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("button1Clicked")){
